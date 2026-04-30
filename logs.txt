@@ -1,0 +1,767 @@
+
+==> Audit <==
+|---------|--------------------------------|----------|-----------|---------|---------------------|---------------------|
+| Command |              Args              | Profile  |   User    | Version |     Start Time      |      End Time       |
+|---------|--------------------------------|----------|-----------|---------|---------------------|---------------------|
+| start   | --vm-driver=qemu               | minikube | cornelius | v1.35.0 | 23 Jan 25 12:42 CET |                     |
+| start   | --vm-driver=qemu               | minikube | cornelius | v1.35.0 | 23 Jan 25 13:48 CET |                     |
+| delete  |                                | minikube | cornelius | v1.35.0 | 23 Jan 25 13:50 CET | 23 Jan 25 13:50 CET |
+| start   | --vm-driver=qemu               | minikube | cornelius | v1.35.0 | 23 Jan 25 13:50 CET |                     |
+| delete  |                                | minikube | cornelius | v1.35.0 | 23 Jan 25 14:09 CET | 23 Jan 25 14:09 CET |
+| start   | --vm-driver=qemu               | minikube | cornelius | v1.35.0 | 23 Jan 25 14:09 CET |                     |
+| delete  |                                | minikube | cornelius | v1.35.0 | 23 Jan 25 15:54 CET | 23 Jan 25 15:54 CET |
+| start   | --vm-driver=qemu               | minikube | cornelius | v1.35.0 | 23 Jan 25 15:54 CET |                     |
+| delete  |                                | minikube | cornelius | v1.35.0 | 23 Jan 25 16:06 CET | 23 Jan 25 16:06 CET |
+| start   | --vm-driver=qemu               | minikube | cornelius | v1.35.0 | 23 Jan 25 16:06 CET |                     |
+| start   | --driver=podman                | minikube | cornelius | v1.35.0 | 23 Jan 25 17:28 CET |                     |
+| delete  |                                | minikube | cornelius | v1.35.0 | 23 Jan 25 17:28 CET | 23 Jan 25 17:28 CET |
+| start   | --driver=podman                | minikube | cornelius | v1.35.0 | 23 Jan 25 17:28 CET |                     |
+| start   | --driver qemu --network        | minikube | cornelius | v1.35.0 | 23 Jan 25 17:32 CET |                     |
+|         | socket_vmnet                   |          |           |         |                     |                     |
+|---------|--------------------------------|----------|-----------|---------|---------------------|---------------------|
+
+
+==> Last Start <==
+Log file created at: 2025/01/23 17:32:29
+Running on machine: Mac
+Binary: Built with gc go1.23.4 for darwin/arm64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0123 17:32:29.606431   57752 out.go:345] Setting OutFile to fd 1 ...
+I0123 17:32:29.607339   57752 out.go:397] isatty.IsTerminal(1) = true
+I0123 17:32:29.607342   57752 out.go:358] Setting ErrFile to fd 2...
+I0123 17:32:29.607344   57752 out.go:397] isatty.IsTerminal(2) = true
+I0123 17:32:29.607769   57752 root.go:338] Updating PATH: /Users/cornelius/.minikube/bin
+I0123 17:32:29.610048   57752 out.go:352] Setting JSON to false
+I0123 17:32:29.637089   57752 start.go:129] hostinfo: {"hostname":"Mac.arris.com","uptime":2077314,"bootTime":1735572635,"procs":524,"os":"darwin","platform":"darwin","platformFamily":"Standalone Workstation","platformVersion":"15.1.1","kernelVersion":"24.1.0","kernelArch":"arm64","virtualizationSystem":"","virtualizationRole":"","hostId":"da86c34d-a2f1-5dc0-8dc3-2a1c424fcf5c"}
+W0123 17:32:29.637162   57752 start.go:137] gopshost.Virtualization returned error: not implemented yet
+I0123 17:32:29.644650   57752 out.go:177] 😄  minikube v1.35.0 on Darwin 15.1.1 (arm64)
+I0123 17:32:29.653793   57752 driver.go:394] Setting default libvirt URI to qemu:///system
+I0123 17:32:29.654024   57752 notify.go:220] Checking for updates...
+I0123 17:32:29.660103   57752 out.go:177] ✨  Using the qemu2 driver based on user configuration
+I0123 17:32:29.666867   57752 start.go:297] selected driver: qemu2
+I0123 17:32:29.666999   57752 start.go:901] validating driver "qemu2" against <nil>
+I0123 17:32:29.667006   57752 start.go:912] status for qemu2: {Installed:true Healthy:true Running:true NeedsImprovement:false Error:<nil> Reason: Fix: Doc: Version:}
+I0123 17:32:29.667074   57752 start_flags.go:310] no existing cluster config was found, will generate one from the flags 
+I0123 17:32:29.668605   57752 start_flags.go:393] Using suggested 2200MB memory alloc based on sys=8192MB, container=0MB
+I0123 17:32:29.668683   57752 start_flags.go:929] Wait components to verify : map[apiserver:true system_pods:true]
+I0123 17:32:29.669042   57752 cni.go:84] Creating CNI manager for ""
+I0123 17:32:29.669217   57752 cni.go:158] "qemu2" driver + "docker" container runtime found on kubernetes v1.24+, recommending bridge
+I0123 17:32:29.669222   57752 start_flags.go:319] Found "bridge CNI" CNI - setting NetworkPlugin=cni
+I0123 17:32:29.669413   57752 start.go:340] cluster config:
+{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO: KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.46@sha256:fd2d445ddcc33ebc5c6b68a17e6219ea207ce63c005095ea1525296da2d1a279 Memory:2200 CPUs:2 DiskSize:20000 Driver:qemu2 HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.32.0 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.32.0 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network:socket_vmnet Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/Users:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath:/opt/homebrew/opt/socket_vmnet/bin/socket_vmnet_client SocketVMnetPath:/opt/homebrew/var/run/socket_vmnet StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s}
+I0123 17:32:29.684478   57752 iso.go:125] acquiring lock: {Name:mk6df9620c053b2cdfdd98640e63e130b5f79ac0 Clock:{} Delay:500ms Timeout:10m0s Cancel:<nil>}
+I0123 17:32:29.690976   57752 out.go:177] 👍  Starting "minikube" primary control-plane node in "minikube" cluster
+I0123 17:32:29.694139   57752 preload.go:131] Checking if preload exists for k8s version v1.32.0 and runtime docker
+I0123 17:32:29.694164   57752 preload.go:146] Found local preload: /Users/cornelius/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.32.0-docker-overlay2-arm64.tar.lz4
+I0123 17:32:29.694472   57752 cache.go:56] Caching tarball of preloaded images
+I0123 17:32:29.694883   57752 preload.go:172] Found /Users/cornelius/.minikube/cache/preloaded-tarball/preloaded-images-k8s-v18-v1.32.0-docker-overlay2-arm64.tar.lz4 in cache, skipping download
+I0123 17:32:29.694886   57752 cache.go:59] Finished verifying existence of preloaded tar for v1.32.0 on docker
+I0123 17:32:29.695315   57752 profile.go:143] Saving config to /Users/cornelius/.minikube/profiles/minikube/config.json ...
+I0123 17:32:29.695323   57752 lock.go:35] WriteFile acquiring /Users/cornelius/.minikube/profiles/minikube/config.json: {Name:mkc99035c91b036d93aeda05031770650d0e8e9c Clock:{} Delay:500ms Timeout:1m0s Cancel:<nil>}
+I0123 17:32:29.696736   57752 start.go:360] acquireMachinesLock for minikube: {Name:mk54f34fbdbbdcdb7a59fbd11ff5bce0e0d7f863 Clock:{} Delay:500ms Timeout:13m0s Cancel:<nil>}
+I0123 17:32:29.696950   57752 start.go:364] duration metric: took 210.375µs to acquireMachinesLock for "minikube"
+I0123 17:32:29.696955   57752 start.go:93] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO:https://storage.googleapis.com/minikube/iso/minikube-v1.35.0-arm64.iso KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.46@sha256:fd2d445ddcc33ebc5c6b68a17e6219ea207ce63c005095ea1525296da2d1a279 Memory:2200 CPUs:2 DiskSize:20000 Driver:qemu2 HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.32.0 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.32.0 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network:socket_vmnet Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/Users:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath:/opt/homebrew/opt/socket_vmnet/bin/socket_vmnet_client SocketVMnetPath:/opt/homebrew/var/run/socket_vmnet StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s} &{Name: IP: Port:8443 KubernetesVersion:v1.32.0 ContainerRuntime:docker ControlPlane:true Worker:true}
+I0123 17:32:29.696990   57752 start.go:125] createHost starting for "" (driver="qemu2")
+I0123 17:32:29.703159   57752 out.go:235] 🔥  Creating qemu2 VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...
+I0123 17:32:29.820270   57752 start.go:159] libmachine.API.Create for "minikube" (driver="qemu2")
+I0123 17:32:29.820880   57752 client.go:168] LocalClient.Create starting
+I0123 17:32:29.821443   57752 main.go:141] libmachine: Reading certificate data from /Users/cornelius/.minikube/certs/ca.pem
+I0123 17:32:29.821581   57752 main.go:141] libmachine: Decoding PEM data...
+I0123 17:32:29.821590   57752 main.go:141] libmachine: Parsing certificate...
+I0123 17:32:29.822565   57752 main.go:141] libmachine: Reading certificate data from /Users/cornelius/.minikube/certs/cert.pem
+I0123 17:32:29.822687   57752 main.go:141] libmachine: Decoding PEM data...
+I0123 17:32:29.822691   57752 main.go:141] libmachine: Parsing certificate...
+I0123 17:32:29.823757   57752 main.go:141] libmachine: Downloading /Users/cornelius/.minikube/cache/boot2docker.iso from file:///Users/cornelius/.minikube/cache/iso/arm64/minikube-v1.35.0-arm64.iso...
+I0123 17:32:30.414550   57752 main.go:141] libmachine: Creating SSH key...
+I0123 17:32:30.452866   57752 main.go:141] libmachine: Creating Disk image...
+I0123 17:32:30.452871   57752 main.go:141] libmachine: Creating 20000 MB hard disk image...
+I0123 17:32:30.453589   57752 main.go:141] libmachine: executing: qemu-img convert -f raw -O qcow2 /Users/cornelius/.minikube/machines/minikube/disk.qcow2.raw /Users/cornelius/.minikube/machines/minikube/disk.qcow2
+I0123 17:32:30.531069   57752 main.go:141] libmachine: STDOUT: 
+I0123 17:32:30.531096   57752 main.go:141] libmachine: STDERR: 
+I0123 17:32:30.531173   57752 main.go:141] libmachine: executing: qemu-img resize /Users/cornelius/.minikube/machines/minikube/disk.qcow2 +20000M
+I0123 17:32:30.543329   57752 main.go:141] libmachine: STDOUT: Image resized.
+
+I0123 17:32:30.543345   57752 main.go:141] libmachine: STDERR: 
+I0123 17:32:30.543358   57752 main.go:141] libmachine: DONE writing to /Users/cornelius/.minikube/machines/minikube/disk.qcow2.raw and /Users/cornelius/.minikube/machines/minikube/disk.qcow2
+I0123 17:32:30.543363   57752 main.go:141] libmachine: Starting QEMU VM...
+I0123 17:32:30.544646   57752 qemu.go:418] Using hvf for hardware acceleration
+I0123 17:32:30.544668   57752 main.go:141] libmachine: executing: /opt/homebrew/opt/socket_vmnet/bin/socket_vmnet_client /opt/homebrew/var/run/socket_vmnet qemu-system-aarch64 -M virt,highmem=off -cpu host -drive file=/opt/homebrew/opt/qemu/share/qemu/edk2-aarch64-code.fd,readonly=on,format=raw,if=pflash -display none -accel hvf -m 2200 -smp 2 -boot d -cdrom /Users/cornelius/.minikube/machines/minikube/boot2docker.iso -qmp unix:/Users/cornelius/.minikube/machines/minikube/monitor,server,nowait -pidfile /Users/cornelius/.minikube/machines/minikube/qemu.pid -device virtio-net-pci,netdev=net0,mac=aa:b7:53:cb:3c:4d -netdev socket,id=net0,fd=3 -daemonize /Users/cornelius/.minikube/machines/minikube/disk.qcow2
+I0123 17:32:30.906324   57752 main.go:141] libmachine: STDOUT: 
+I0123 17:32:30.906346   57752 main.go:141] libmachine: STDERR: 
+I0123 17:32:30.906352   57752 main.go:141] libmachine: Attempt 0
+I0123 17:32:30.907079   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:30.907970   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:30.908000   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:30.908006   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:32.912894   57752 main.go:141] libmachine: Attempt 1
+I0123 17:32:32.912969   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:32.913384   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:32.913425   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:32.913444   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:34.914882   57752 main.go:141] libmachine: Attempt 2
+I0123 17:32:34.915019   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:34.915438   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:34.915501   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:34.915561   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:36.916677   57752 main.go:141] libmachine: Attempt 3
+I0123 17:32:36.916700   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:36.916772   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:36.916785   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:36.916814   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:38.917909   57752 main.go:141] libmachine: Attempt 4
+I0123 17:32:38.917942   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:38.918027   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:38.918045   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:38.918053   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:40.918223   57752 main.go:141] libmachine: Attempt 5
+I0123 17:32:40.918248   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:40.918333   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:40.918344   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:40.918351   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:42.919607   57752 main.go:141] libmachine: Attempt 6
+I0123 17:32:42.920012   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:42.920607   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:42.920948   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:42.920957   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:44.922180   57752 main.go:141] libmachine: Attempt 7
+I0123 17:32:44.922256   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:44.922426   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:44.922457   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:44.922464   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:46.925693   57752 main.go:141] libmachine: Attempt 8
+I0123 17:32:46.925732   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:46.925821   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:46.925835   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:46.925841   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:48.927190   57752 main.go:141] libmachine: Attempt 9
+I0123 17:32:48.927210   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:48.927251   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:48.927258   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:48.927262   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:50.928630   57752 main.go:141] libmachine: Attempt 10
+I0123 17:32:50.928656   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:50.928709   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:50.928718   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:50.928728   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:52.930001   57752 main.go:141] libmachine: Attempt 11
+I0123 17:32:52.930014   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:52.930081   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:52.930089   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:52.930093   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:54.931358   57752 main.go:141] libmachine: Attempt 12
+I0123 17:32:54.931372   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:54.931441   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:54.931449   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:54.931453   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:56.932684   57752 main.go:141] libmachine: Attempt 13
+I0123 17:32:56.932721   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:56.932782   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:56.932793   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:56.932798   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:32:58.934042   57752 main.go:141] libmachine: Attempt 14
+I0123 17:32:58.934056   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:32:58.934113   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:32:58.934121   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:32:58.934125   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:00.935324   57752 main.go:141] libmachine: Attempt 15
+I0123 17:33:00.935345   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:00.935425   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:00.935434   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:00.935439   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:02.936597   57752 main.go:141] libmachine: Attempt 16
+I0123 17:33:02.936613   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:02.936684   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:02.936693   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:02.936697   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:04.937870   57752 main.go:141] libmachine: Attempt 17
+I0123 17:33:04.937906   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:04.938004   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:04.938028   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:04.938037   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:06.939226   57752 main.go:141] libmachine: Attempt 18
+I0123 17:33:06.939262   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:06.939317   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:06.939327   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:06.939333   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:08.940480   57752 main.go:141] libmachine: Attempt 19
+I0123 17:33:08.940500   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:08.940565   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:08.940573   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:08.940577   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:10.941699   57752 main.go:141] libmachine: Attempt 20
+I0123 17:33:10.941722   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:10.941770   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:10.941778   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:10.941783   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:12.942979   57752 main.go:141] libmachine: Attempt 21
+I0123 17:33:12.943042   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:12.943184   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:12.943212   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:12.943219   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:14.944321   57752 main.go:141] libmachine: Attempt 22
+I0123 17:33:14.944333   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:14.944434   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:14.944442   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:14.944446   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:16.945863   57752 main.go:141] libmachine: Attempt 23
+I0123 17:33:16.945939   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:16.946083   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:16.946105   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:16.946112   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:18.947246   57752 main.go:141] libmachine: Attempt 24
+I0123 17:33:18.947279   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:18.947403   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:18.947413   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:18.947422   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:20.948528   57752 main.go:141] libmachine: Attempt 25
+I0123 17:33:20.948541   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:20.948613   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:20.948632   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:20.948643   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:22.949728   57752 main.go:141] libmachine: Attempt 26
+I0123 17:33:22.949741   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:22.949818   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:22.949825   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:22.949834   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:24.950894   57752 main.go:141] libmachine: Attempt 27
+I0123 17:33:24.950906   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:24.950946   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:24.950954   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:24.950958   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:26.952037   57752 main.go:141] libmachine: Attempt 28
+I0123 17:33:26.952056   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:26.952093   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:26.952101   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:26.952105   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:28.953173   57752 main.go:141] libmachine: Attempt 29
+I0123 17:33:28.953185   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:28.953240   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:28.953248   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:28.953252   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:30.953440   57752 main.go:141] libmachine: Attempt 30
+I0123 17:33:30.953478   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:30.953543   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:30.953562   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:30.953569   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:32.954659   57752 main.go:141] libmachine: Attempt 31
+I0123 17:33:32.954673   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:32.954793   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:32.954814   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:32.954820   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:34.955952   57752 main.go:141] libmachine: Attempt 32
+I0123 17:33:34.955997   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:34.956088   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:34.956122   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:34.956127   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:36.957209   57752 main.go:141] libmachine: Attempt 33
+I0123 17:33:36.957242   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:36.957318   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:36.957330   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:36.957336   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:38.958415   57752 main.go:141] libmachine: Attempt 34
+I0123 17:33:38.958443   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:38.958526   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:38.958540   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:38.958544   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:40.959697   57752 main.go:141] libmachine: Attempt 35
+I0123 17:33:40.959780   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:40.959903   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:40.959926   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:40.959932   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:42.961467   57752 main.go:141] libmachine: Attempt 36
+I0123 17:33:42.961481   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:42.961520   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:42.961527   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:42.961532   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:44.972048   57752 main.go:141] libmachine: Attempt 37
+I0123 17:33:44.972168   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:44.972253   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:44.972291   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:44.972299   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:46.973454   57752 main.go:141] libmachine: Attempt 38
+I0123 17:33:46.973592   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:46.974279   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:46.974306   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:46.974313   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:48.976055   57752 main.go:141] libmachine: Attempt 39
+I0123 17:33:48.976271   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:48.976874   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:48.976943   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:48.976972   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:50.978283   57752 main.go:141] libmachine: Attempt 40
+I0123 17:33:50.978318   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:50.978436   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:50.978453   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:50.978461   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:52.978921   57752 main.go:141] libmachine: Attempt 41
+I0123 17:33:52.979001   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:52.979160   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:52.979193   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:52.979454   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:54.980548   57752 main.go:141] libmachine: Attempt 42
+I0123 17:33:54.980588   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:54.980729   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:54.980741   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:54.980748   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:56.981845   57752 main.go:141] libmachine: Attempt 43
+I0123 17:33:56.981897   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:56.981981   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:56.982002   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:56.982007   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:33:58.983266   57752 main.go:141] libmachine: Attempt 44
+I0123 17:33:58.983301   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:33:58.983403   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:33:58.983413   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:33:58.983421   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:00.984499   57752 main.go:141] libmachine: Attempt 45
+I0123 17:34:00.984540   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:00.984662   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:00.984678   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:00.984683   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:02.985765   57752 main.go:141] libmachine: Attempt 46
+I0123 17:34:02.985810   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:02.986241   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:02.986257   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:02.986263   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:04.986531   57752 main.go:141] libmachine: Attempt 47
+I0123 17:34:04.986554   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:04.986617   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:04.986627   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:04.986633   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:06.988109   57752 main.go:141] libmachine: Attempt 48
+I0123 17:34:06.988130   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:06.988194   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:06.988207   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:06.988211   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:08.989259   57752 main.go:141] libmachine: Attempt 49
+I0123 17:34:08.989281   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:08.989330   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:08.989338   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:08.989343   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:10.990615   57752 main.go:141] libmachine: Attempt 50
+I0123 17:34:10.990643   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:10.990716   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:10.990732   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:10.990745   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:12.991805   57752 main.go:141] libmachine: Attempt 51
+I0123 17:34:12.991832   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:12.991914   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:12.991927   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:12.991931   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:14.992744   57752 main.go:141] libmachine: Attempt 52
+I0123 17:34:14.992766   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:14.992844   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:14.992852   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:14.992857   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:16.993945   57752 main.go:141] libmachine: Attempt 53
+I0123 17:34:16.993982   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:16.994105   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:16.994121   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:16.994127   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:18.995191   57752 main.go:141] libmachine: Attempt 54
+I0123 17:34:18.995225   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:18.995320   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:18.995333   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:18.995341   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:20.996375   57752 main.go:141] libmachine: Attempt 55
+I0123 17:34:20.996390   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:20.996462   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:20.996472   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:20.996476   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:22.997510   57752 main.go:141] libmachine: Attempt 56
+I0123 17:34:22.997523   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:22.997576   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:22.997583   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:22.997596   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:24.999388   57752 main.go:141] libmachine: Attempt 57
+I0123 17:34:24.999403   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:24.999444   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:24.999452   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:24.999456   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:27.000695   57752 main.go:141] libmachine: Attempt 58
+I0123 17:34:27.000764   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:27.000874   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:27.000894   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:27.000904   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:29.001943   57752 main.go:141] libmachine: Attempt 59
+I0123 17:34:29.001971   57752 main.go:141] libmachine: Searching for aa:b7:53:cb:3c:4d in /var/db/dhcpd_leases ...
+I0123 17:34:29.002016   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:29.002032   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:29.002037   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:31.014030   57752 out.go:177] 🔑  Your firewall is blocking bootpd which is required for this configuration. The following commands will be executed to unblock bootpd:
+
+    $ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/libexec/bootpd 
+    $ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblock /usr/libexec/bootpd 
+
+
+I0123 17:34:31.017880   57752 firewall.go:74] testing: [sudo -n /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/libexec/bootpd]
+I0123 17:34:31.135614   57752 firewall.go:82] running: [sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/libexec/bootpd]
+I0123 17:34:31.154757   57752 firewall.go:74] testing: [sudo -n /usr/libexec/ApplicationFirewall/socketfilterfw --unblock /usr/libexec/bootpd]
+I0123 17:34:31.171229   57752 firewall.go:82] running: [sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblock /usr/libexec/bootpd]
+I0123 17:34:31.190273   57752 out.go:177] 🔄  Successfully unblocked bootpd process from firewall, retrying
+I0123 17:34:31.195527   57752 client.go:171] duration metric: took 2m1.370977541s to LocalClient.Create
+I0123 17:34:33.197045   57752 start.go:128] duration metric: took 2m3.497229542s to createHost
+I0123 17:34:33.197256   57752 start.go:83] releasing machines lock for "minikube", held for 2m3.497483416s
+W0123 17:34:33.197786   57752 start.go:714] error starting host: creating host: create: creating: ip not found: failed to get IP address: could not find an IP address for aa:b7:53:cb:3c:4d
+I0123 17:34:33.221772   57752 out.go:177] 🔥  Deleting "minikube" in qemu2 ...
+W0123 17:34:33.227761   57752 out.go:270] 🤦  StartHost failed, but will try again: creating host: create: creating: ip not found: failed to get IP address: could not find an IP address for aa:b7:53:cb:3c:4d
+I0123 17:34:33.227772   57752 start.go:729] Will try again in 5 seconds ...
+I0123 17:34:38.229936   57752 start.go:360] acquireMachinesLock for minikube: {Name:mk54f34fbdbbdcdb7a59fbd11ff5bce0e0d7f863 Clock:{} Delay:500ms Timeout:13m0s Cancel:<nil>}
+I0123 17:34:38.233056   57752 start.go:364] duration metric: took 2.182625ms to acquireMachinesLock for "minikube"
+I0123 17:34:38.233700   57752 start.go:93] Provisioning new machine with config: &{Name:minikube KeepContext:false EmbedCerts:false MinikubeISO:https://storage.googleapis.com/minikube/iso/minikube-v1.35.0-arm64.iso KicBaseImage:gcr.io/k8s-minikube/kicbase:v0.0.46@sha256:fd2d445ddcc33ebc5c6b68a17e6219ea207ce63c005095ea1525296da2d1a279 Memory:2200 CPUs:2 DiskSize:20000 Driver:qemu2 HyperkitVpnKitSock: HyperkitVSockPorts:[] DockerEnv:[] ContainerVolumeMounts:[] InsecureRegistry:[] RegistryMirror:[] HostOnlyCIDR:192.168.59.1/24 HypervVirtualSwitch: HypervUseExternalSwitch:false HypervExternalAdapter: KVMNetwork:default KVMQemuURI:qemu:///system KVMGPU:false KVMHidden:false KVMNUMACount:1 APIServerPort:8443 DockerOpt:[] DisableDriverMounts:false NFSShare:[] NFSSharesRoot:/nfsshares UUID: NoVTXCheck:false DNSProxy:false HostDNSResolver:true HostOnlyNicType:virtio NatNicType:virtio SSHIPAddress: SSHUser:root SSHKey: SSHPort:22 KubernetesConfig:{KubernetesVersion:v1.32.0 ClusterName:minikube Namespace:default APIServerHAVIP: APIServerName:minikubeCA APIServerNames:[] APIServerIPs:[] DNSDomain:cluster.local ContainerRuntime:docker CRISocket: NetworkPlugin:cni FeatureGates: ServiceCIDR:10.96.0.0/12 ImageRepository: LoadBalancerStartIP: LoadBalancerEndIP: CustomIngressCert: RegistryAliases: ExtraOptions:[] ShouldLoadCachedImages:true EnableDefaultCNI:false CNI:} Nodes:[{Name: IP: Port:8443 KubernetesVersion:v1.32.0 ContainerRuntime:docker ControlPlane:true Worker:true}] Addons:map[] CustomAddonImages:map[] CustomAddonRegistries:map[] VerifyComponents:map[apiserver:true system_pods:true] StartHostTimeout:6m0s ScheduledStop:<nil> ExposedPorts:[] ListenAddress: Network:socket_vmnet Subnet: MultiNodeRequested:false ExtraDisks:0 CertExpiration:26280h0m0s Mount:false MountString:/Users:/minikube-host Mount9PVersion:9p2000.L MountGID:docker MountIP: MountMSize:262144 MountOptions:[] MountPort:0 MountType:9p MountUID:docker BinaryMirror: DisableOptimizations:false DisableMetrics:false CustomQemuFirmwarePath: SocketVMnetClientPath:/opt/homebrew/opt/socket_vmnet/bin/socket_vmnet_client SocketVMnetPath:/opt/homebrew/var/run/socket_vmnet StaticIP: SSHAuthSock: SSHAgentPID:0 GPUs: AutoPauseInterval:1m0s} &{Name: IP: Port:8443 KubernetesVersion:v1.32.0 ContainerRuntime:docker ControlPlane:true Worker:true}
+I0123 17:34:38.235500   57752 start.go:125] createHost starting for "" (driver="qemu2")
+I0123 17:34:38.244230   57752 out.go:235] 🔥  Creating qemu2 VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...
+I0123 17:34:38.367352   57752 start.go:159] libmachine.API.Create for "minikube" (driver="qemu2")
+I0123 17:34:38.367530   57752 client.go:168] LocalClient.Create starting
+I0123 17:34:38.368566   57752 main.go:141] libmachine: Reading certificate data from /Users/cornelius/.minikube/certs/ca.pem
+I0123 17:34:38.368847   57752 main.go:141] libmachine: Decoding PEM data...
+I0123 17:34:38.368988   57752 main.go:141] libmachine: Parsing certificate...
+I0123 17:34:38.371158   57752 main.go:141] libmachine: Reading certificate data from /Users/cornelius/.minikube/certs/cert.pem
+I0123 17:34:38.371290   57752 main.go:141] libmachine: Decoding PEM data...
+I0123 17:34:38.371295   57752 main.go:141] libmachine: Parsing certificate...
+I0123 17:34:38.372459   57752 main.go:141] libmachine: Downloading /Users/cornelius/.minikube/cache/boot2docker.iso from file:///Users/cornelius/.minikube/cache/iso/arm64/minikube-v1.35.0-arm64.iso...
+I0123 17:34:38.788832   57752 main.go:141] libmachine: Creating SSH key...
+I0123 17:34:38.855996   57752 main.go:141] libmachine: Creating Disk image...
+I0123 17:34:38.856010   57752 main.go:141] libmachine: Creating 20000 MB hard disk image...
+I0123 17:34:38.856916   57752 main.go:141] libmachine: executing: qemu-img convert -f raw -O qcow2 /Users/cornelius/.minikube/machines/minikube/disk.qcow2.raw /Users/cornelius/.minikube/machines/minikube/disk.qcow2
+I0123 17:34:38.884546   57752 main.go:141] libmachine: STDOUT: 
+I0123 17:34:38.884567   57752 main.go:141] libmachine: STDERR: 
+I0123 17:34:38.884640   57752 main.go:141] libmachine: executing: qemu-img resize /Users/cornelius/.minikube/machines/minikube/disk.qcow2 +20000M
+I0123 17:34:38.895691   57752 main.go:141] libmachine: STDOUT: Image resized.
+
+I0123 17:34:38.895702   57752 main.go:141] libmachine: STDERR: 
+I0123 17:34:38.895710   57752 main.go:141] libmachine: DONE writing to /Users/cornelius/.minikube/machines/minikube/disk.qcow2.raw and /Users/cornelius/.minikube/machines/minikube/disk.qcow2
+I0123 17:34:38.895714   57752 main.go:141] libmachine: Starting QEMU VM...
+I0123 17:34:38.895739   57752 qemu.go:418] Using hvf for hardware acceleration
+I0123 17:34:38.895777   57752 main.go:141] libmachine: executing: /opt/homebrew/opt/socket_vmnet/bin/socket_vmnet_client /opt/homebrew/var/run/socket_vmnet qemu-system-aarch64 -M virt,highmem=off -cpu host -drive file=/opt/homebrew/opt/qemu/share/qemu/edk2-aarch64-code.fd,readonly=on,format=raw,if=pflash -display none -accel hvf -m 2200 -smp 2 -boot d -cdrom /Users/cornelius/.minikube/machines/minikube/boot2docker.iso -qmp unix:/Users/cornelius/.minikube/machines/minikube/monitor,server,nowait -pidfile /Users/cornelius/.minikube/machines/minikube/qemu.pid -device virtio-net-pci,netdev=net0,mac=9e:35:9b:42:cf:08 -netdev socket,id=net0,fd=3 -daemonize /Users/cornelius/.minikube/machines/minikube/disk.qcow2
+I0123 17:34:38.999865   57752 main.go:141] libmachine: STDOUT: 
+I0123 17:34:38.999880   57752 main.go:141] libmachine: STDERR: 
+I0123 17:34:38.999884   57752 main.go:141] libmachine: Attempt 0
+I0123 17:34:38.999904   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:39.000016   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:39.000029   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:39.000035   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:41.001269   57752 main.go:141] libmachine: Attempt 1
+I0123 17:34:41.001403   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:41.001706   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:41.001755   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:41.001814   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:43.002850   57752 main.go:141] libmachine: Attempt 2
+I0123 17:34:43.002906   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:43.003245   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:43.003293   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:43.003323   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:45.004411   57752 main.go:141] libmachine: Attempt 3
+I0123 17:34:45.004423   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:45.004514   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:45.004522   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:45.004526   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:47.005569   57752 main.go:141] libmachine: Attempt 4
+I0123 17:34:47.005597   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:47.005709   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:47.005740   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:47.005745   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:49.006819   57752 main.go:141] libmachine: Attempt 5
+I0123 17:34:49.006860   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:49.006970   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:49.006987   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:49.006994   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:51.008234   57752 main.go:141] libmachine: Attempt 6
+I0123 17:34:51.008418   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:51.009258   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:51.009290   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:51.009326   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:53.010493   57752 main.go:141] libmachine: Attempt 7
+I0123 17:34:53.010573   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:53.010909   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:53.010937   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:53.010947   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:55.012023   57752 main.go:141] libmachine: Attempt 8
+I0123 17:34:55.012046   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:55.012148   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:55.012157   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:55.012161   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:57.013453   57752 main.go:141] libmachine: Attempt 9
+I0123 17:34:57.013814   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:57.013998   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:57.014230   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:57.014244   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:34:59.018916   57752 main.go:141] libmachine: Attempt 10
+I0123 17:34:59.018954   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:34:59.019035   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:34:59.019052   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:34:59.019061   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:01.020112   57752 main.go:141] libmachine: Attempt 11
+I0123 17:35:01.020134   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:01.023089   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:01.023123   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:01.023128   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:03.024641   57752 main.go:141] libmachine: Attempt 12
+I0123 17:35:03.024673   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:03.024738   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:03.024750   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:03.024754   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:05.025810   57752 main.go:141] libmachine: Attempt 13
+I0123 17:35:05.025842   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:05.025894   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:05.025905   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:05.025910   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:07.027028   57752 main.go:141] libmachine: Attempt 14
+I0123 17:35:07.027085   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:07.027354   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:07.027379   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:07.027387   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:09.028302   57752 main.go:141] libmachine: Attempt 15
+I0123 17:35:09.028398   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:09.028875   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:09.028911   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:09.028924   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:11.029972   57752 main.go:141] libmachine: Attempt 16
+I0123 17:35:11.029992   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:11.030064   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:11.030072   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:11.030076   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:13.031326   57752 main.go:141] libmachine: Attempt 17
+I0123 17:35:13.031348   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:13.031444   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:13.031455   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:13.031467   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:15.031952   57752 main.go:141] libmachine: Attempt 18
+I0123 17:35:15.032487   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:15.032923   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:15.032951   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:15.032967   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:17.034014   57752 main.go:141] libmachine: Attempt 19
+I0123 17:35:17.034030   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:17.034132   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:17.034144   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:17.034160   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:19.035236   57752 main.go:141] libmachine: Attempt 20
+I0123 17:35:19.035284   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:19.035387   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:19.035407   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:19.035414   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:21.036460   57752 main.go:141] libmachine: Attempt 21
+I0123 17:35:21.036486   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:21.036539   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:21.036546   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:21.036551   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:23.037588   57752 main.go:141] libmachine: Attempt 22
+I0123 17:35:23.037599   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:23.038277   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:23.038286   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:23.038290   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:25.039524   57752 main.go:141] libmachine: Attempt 23
+I0123 17:35:25.039706   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:25.040013   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:25.040198   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:25.040356   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:27.041442   57752 main.go:141] libmachine: Attempt 24
+I0123 17:35:27.041474   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:27.041535   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:27.041545   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:27.041553   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:29.045065   57752 main.go:141] libmachine: Attempt 25
+I0123 17:35:29.045109   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:29.045211   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:29.045223   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:29.045228   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:31.046278   57752 main.go:141] libmachine: Attempt 26
+I0123 17:35:31.046308   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:31.046431   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:31.046442   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:31.046450   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:33.047521   57752 main.go:141] libmachine: Attempt 27
+I0123 17:35:33.047594   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:33.047666   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:33.047682   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:33.047690   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:35.048536   57752 main.go:141] libmachine: Attempt 28
+I0123 17:35:35.048550   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:35.048614   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:35.048622   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:35.049604   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:37.050927   57752 main.go:141] libmachine: Attempt 29
+I0123 17:35:37.051003   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:37.051342   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:37.051382   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:37.051390   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:39.052458   57752 main.go:141] libmachine: Attempt 30
+I0123 17:35:39.052507   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:39.054066   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:39.054080   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:39.054087   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:41.055163   57752 main.go:141] libmachine: Attempt 31
+I0123 17:35:41.055200   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:41.055310   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:41.055329   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:41.055343   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:43.056401   57752 main.go:141] libmachine: Attempt 32
+I0123 17:35:43.056441   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:43.056498   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:43.056506   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:43.056513   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:45.057315   57752 main.go:141] libmachine: Attempt 33
+I0123 17:35:45.057379   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:45.057480   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:45.057751   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:45.057757   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:47.059239   57752 main.go:141] libmachine: Attempt 34
+I0123 17:35:47.059254   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:47.059347   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:47.059357   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:47.059361   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:49.060411   57752 main.go:141] libmachine: Attempt 35
+I0123 17:35:49.060434   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:49.060503   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:49.060511   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:49.060516   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:51.061859   57752 main.go:141] libmachine: Attempt 36
+I0123 17:35:51.061911   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:51.062004   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:51.062045   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:51.062049   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:53.063119   57752 main.go:141] libmachine: Attempt 37
+I0123 17:35:53.063158   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:53.063245   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:53.063256   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:53.063264   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:55.064620   57752 main.go:141] libmachine: Attempt 38
+I0123 17:35:55.064698   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:55.064796   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:55.064832   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:55.064838   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:57.065965   57752 main.go:141] libmachine: Attempt 39
+I0123 17:35:57.066015   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:57.066108   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:57.066125   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:57.066129   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:35:59.067185   57752 main.go:141] libmachine: Attempt 40
+I0123 17:35:59.067199   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:35:59.067292   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:35:59.067302   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:35:59.067307   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:01.068390   57752 main.go:141] libmachine: Attempt 41
+I0123 17:36:01.068454   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:01.068571   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:01.068607   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:01.068613   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:03.069662   57752 main.go:141] libmachine: Attempt 42
+I0123 17:36:03.069684   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:03.069727   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:03.069735   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:03.069740   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:05.070792   57752 main.go:141] libmachine: Attempt 43
+I0123 17:36:05.070815   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:05.070921   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:05.070937   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:05.070942   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:07.073142   57752 main.go:141] libmachine: Attempt 44
+I0123 17:36:07.073182   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:07.073266   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:07.073288   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:07.073292   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:09.074364   57752 main.go:141] libmachine: Attempt 45
+I0123 17:36:09.074399   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:09.074468   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:09.074478   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:09.074484   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:11.075526   57752 main.go:141] libmachine: Attempt 46
+I0123 17:36:11.075553   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:11.076572   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:11.076581   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:11.076586   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:13.078068   57752 main.go:141] libmachine: Attempt 47
+I0123 17:36:13.078094   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:13.078157   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:13.078173   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:13.078178   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:15.079106   57752 main.go:141] libmachine: Attempt 48
+I0123 17:36:15.079154   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:15.079252   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:15.079263   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:15.079269   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:17.080368   57752 main.go:141] libmachine: Attempt 49
+I0123 17:36:17.080433   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:17.080597   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:17.080630   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:17.080641   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:19.081690   57752 main.go:141] libmachine: Attempt 50
+I0123 17:36:19.081718   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:19.081799   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:19.081816   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:19.081827   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:21.083000   57752 main.go:141] libmachine: Attempt 51
+I0123 17:36:21.083116   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:21.083240   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:21.083289   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:21.083301   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:23.084366   57752 main.go:141] libmachine: Attempt 52
+I0123 17:36:23.084380   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:23.084848   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:23.084857   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:23.084861   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:25.085496   57752 main.go:141] libmachine: Attempt 53
+I0123 17:36:25.085524   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:25.085578   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:25.085604   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:25.085820   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:27.086914   57752 main.go:141] libmachine: Attempt 54
+I0123 17:36:27.086969   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:27.087100   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:27.087345   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:27.087350   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:29.089067   57752 main.go:141] libmachine: Attempt 55
+I0123 17:36:29.089194   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:29.089328   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:29.089363   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:29.089371   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:31.090516   57752 main.go:141] libmachine: Attempt 56
+I0123 17:36:31.090588   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:31.091079   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:31.091122   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:31.091133   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:33.092238   57752 main.go:141] libmachine: Attempt 57
+I0123 17:36:33.092297   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:33.092433   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:33.092454   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:33.092460   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:35.097779   57752 main.go:141] libmachine: Attempt 58
+I0123 17:36:35.097959   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:35.098285   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:35.098350   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:35.098405   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:37.098726   57752 main.go:141] libmachine: Attempt 59
+I0123 17:36:37.098785   57752 main.go:141] libmachine: Searching for 9e:35:9b:42:cf:08 in /var/db/dhcpd_leases ...
+I0123 17:36:37.098936   57752 main.go:141] libmachine: Found 2 entries in /var/db/dhcpd_leases!
+I0123 17:36:37.098965   57752 main.go:141] libmachine: dhcp entry: {Name: IPAddress:192.168.64.3 HWAddress:0a:ab:51:21:17:97 ID:1,a:ab:51:21:17:97 Lease:0x677bb41a}
+I0123 17:36:37.098972   57752 main.go:141] libmachine: dhcp entry: {Name:ubuntu-server IPAddress:192.168.64.2 HWAddress:de:27:c4:74:c0:70 ID:1,de:27:c4:74:c0:70 Lease:0x64d768a4}
+I0123 17:36:39.111903   57752 out.go:177] 🔑  Your firewall is blocking bootpd which is required for this configuration. The following commands will be executed to unblock bootpd:
+
+    $ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/libexec/bootpd 
+    $ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblock /usr/libexec/bootpd 
+
+
+I0123 17:36:39.118155   57752 firewall.go:74] testing: [sudo -n /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/libexec/bootpd]
+I0123 17:36:39.217991   57752 firewall.go:82] running: [sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/libexec/bootpd]
+I0123 17:36:39.242076   57752 firewall.go:74] testing: [sudo -n /usr/libexec/ApplicationFirewall/socketfilterfw --unblock /usr/libexec/bootpd]
+I0123 17:36:39.259756   57752 firewall.go:82] running: [sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblock /usr/libexec/bootpd]
+I0123 17:36:39.281917   57752 out.go:177] 🔄  Successfully unblocked bootpd process from firewall, retrying
+I0123 17:36:39.288005   57752 client.go:171] duration metric: took 2m0.919287459s to LocalClient.Create
+I0123 17:36:41.289599   57752 start.go:128] duration metric: took 2m3.054105833s to createHost
+I0123 17:36:41.289897   57752 start.go:83] releasing machines lock for "minikube", held for 2m3.056557958s
+W0123 17:36:41.292129   57752 out.go:270] 😿  Failed to start qemu2 VM. Running "minikube delete" may fix it: creating host: create: creating: ip not found: failed to get IP address: could not find an IP address for 9e:35:9b:42:cf:08
+I0123 17:36:41.298731   57752 out.go:201] 
+W0123 17:36:41.305121   57752 out.go:270] ❌  Exiting due to GUEST_PROVISION: error provisioning guest: Failed to start host: creating host: create: creating: ip not found: failed to get IP address: could not find an IP address for 9e:35:9b:42:cf:08
+W0123 17:36:41.305147   57752 out.go:270] 
+W0123 17:36:41.309302   57752 out.go:293] [31m╭───────────────────────────────────────────────────────────────────────────────────────────╮[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    😿  If the above advice does not help, please let us know:                             [31m│[0m
+[31m│[0m    👉  https://github.com/kubernetes/minikube/issues/new/choose                           [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m│[0m    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    [31m│[0m
+[31m│[0m                                                                                           [31m│[0m
+[31m╰───────────────────────────────────────────────────────────────────────────────────────────╯[0m
+I0123 17:36:41.317706   57752 out.go:201] 
+
+
